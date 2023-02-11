@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1> user</h1>
+  {% if user %}
+  <ul>
+    {% for profile in user %}
+      <li>
+        <a href="{{ profile.get_absolute_url }}">{{ profile.Name}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+{% endblock %}
